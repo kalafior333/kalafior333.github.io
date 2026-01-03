@@ -1,0 +1,19 @@
+body {
+    background-color: rgb(37, 55, 88);
+    color: aliceblue;
+}
+header {
+    font-size: 50px;
+    text-align: center;
+    padding: 50px;
+}
+a {
+    text-decoration: none;
+    display: block;
+    padding: 30px;
+    background-color: black;
+    color: aliceblue;
+    margin-left: 0px;
+    margin-right: 0px;
+    text-align: center;
+}
