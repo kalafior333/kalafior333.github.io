@@ -1,0 +1,21 @@
+body{
+    margin: 0px;
+    background-color: #292727;
+}
+header {
+    text-align: center;
+    font-size: 40px;
+    color: aliceblue;
+    padding: 40px;
+}
+canvas {
+    background-color: #25641c;
+    display: block; 
+    margin: 0 auto;
+}
+#score {
+    color: aliceblue;
+    font-size: 40px;
+    padding: 40px;
+    text-align: center;
+}
