@@ -6,10 +6,24 @@
     <link rel="stylesheet" href="style.css">
     <title>Snake</title>
 </head>
-<body  onload="wynikView()">
-    <header>Snake 1.0</header>
-    <canvas id="gameCanvas" width="900" height="600"></canvas>
-    <div id="score"></div>
+<body  onload="init()">
+    <div id="right-bar">
+        <div class="controls">
+            <button id="start" onclick="startGame()">START</button>
+            <button id="stop" onclick="stopGame()">STOP</button>
+        </div>
+        <div id="dificult">
+            <button id="easy" class="dif active">EASY</button>
+            <button id="medium" class="dif">MEDIUM</button>
+            <button id="hard" class="dif">HARD</button>
+            <button id="master" class="dif">MASTER</button>
+        </div>
+    </div>
+    <div id="center-bar">
+        <header>Snake 1.0</header>
+        <canvas id="gameCanvas" width="900" height="600"></canvas>
+        <div id="score"></div>
+    </div>
     <script src="snake.js"></script>
 </body>
 </html>
