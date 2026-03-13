@@ -1,1 +1,28 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="quiz.css">
+</head>
+<body onload="pierwszePytanie()">
+    <div id="content">
+        <h1>Wielki quiz z wiedzy ogólnej</h1>
+        <div id="liczniki">
+            <div id="numer_pytania" class="testy"></div>
+            <div id="kategoria" class="testy"></div>
+            <div id="procent" class="testy"></div>
+        </div>
+        <div id="obudowa_pytania">
+            <div id="pytanie">Która planeta w naszym Układzie Słonecznym jest największa?</div>
+            <div id="0" class="odp">A</div>
+            <div id="1" class="odp">B</div>
+            <div id="2" class="odp">C</div>
+            <div id="3" class="odp">D</div>
+        </div>
+        <div class="przycisk_dolny" onclick="nastepnePytanie()">Następne pytanie</div>
+    </div>
+    <script src="quiz.js"></script>
+</body>
+</html>
