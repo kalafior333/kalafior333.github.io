@@ -1,1 +1,0 @@
-Pliki z grą snake
