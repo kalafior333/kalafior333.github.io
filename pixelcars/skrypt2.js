@@ -1098,24 +1098,19 @@ function snakeView() {
 
 function adjustCanvas() {
     const centerBar = document.getElementById("content-snake");
-    // Pobieramy szerokość rodzica (center-bar)
+
     let parentWidth = centerBar.clientWidth;
     console.log("Szerokość rodzica:", parentWidth);
-    // Wysokość możemy zostawić zależną od okna lub też od rodzica
-    let mw = parentWidth * 0.95;
-    let mh = window.innerHeight * 0.5; // Wysokość na ok. 50% ekranu
-    //let widthPix = window.innerWidth;
-    //let heightPix = window.innerHeight;
+    let mh = window.innerHeight * 0.5; 
+  
 
 
-    // Ograniczamy maksymalny rozmiar, żeby gra nie była za wielka na monitorach
     if (mw > 2000) mw = 2000;
-    //if (mh > 800) mh = 800;
+   
 
-    // KLUCZOWE: Zaokrąglamy w dół do najbliższej wielokrotności 'box'
     canvas.width = Math.floor(mw / box) * box;
     canvas.height = Math.floor(mh / box) * box;
-   // resetGame();
+   
 }
 
 document.addEventListener('keydown', changeDirection);
@@ -1181,11 +1176,9 @@ function game() {
             generateFood();
             wynik++;
             wynikView();
-            // nie usuwamy ogona -> wąż rośnie
+           
         } else {
-            snake.pop(); // usuwa ostatni segment
-        }
-        // rysowanie
+            snake.pop(); 
         for (let i = 0; i < snake.length; i++) {
             ctx.fillStyle = 'red';
             ctx.strokeStyle = 'black';
