@@ -14,26 +14,19 @@ let food;
 function adjustCanvas() {
     generateFood();
     const centerBar = document.getElementById("center-bar");
-    // Pobieramy szerokość rodzica (center-bar)
     let parentWidth = centerBar.clientWidth;
-    // Wysokość możemy zostawić zależną od okna lub też od rodzica
     let mw = parentWidth * 0.95;
-    let mh = window.innerHeight * 0.7; // Wysokość na ok. 50% ekranu
-    //let widthPix = window.innerWidth;
-    //let heightPix = window.innerHeight;
+    let mh = window.innerHeight * 0.7; 
 
 
-    // Ograniczamy maksymalny rozmiar, żeby gra nie była za wielka na monitorach
     if (mw > 2000) mw = 2000;
-    //if (mh > 800) mh = 800;
 
-    // KLUCZOWE: Zaokrąglamy w dół do najbliższej wielokrotności 'box'
+
     canvas.width = Math.floor(mw / box) * box;
     canvas.height = Math.floor(mh / box) * box;
-   // resetGame();
-}
+
 adjustCanvas();
-// Reagujemy na zmianę rozmiaru okna (opcjonalne, zresetuje grę przy obrocie ekranu)
+
 window.addEventListener('resize', () => {
     adjustCanvas(); 
 });
@@ -93,9 +86,8 @@ function game() {
             generateFood();
             wynik++;
             wynikView();
-            // nie usuwamy ogona -> wąż rośnie
         } else {
-            snake.pop(); // usuwa ostatni segment
+            snake.pop(); 
         }
         // rysowanie
         for (let i = 0; i < snake.length; i++) {
@@ -137,42 +129,3 @@ function selectDif(id) {
     }
     resetGame();
 }
-// Obsługa dotyku dla telefonów
-let touchStartX = 0;
-let touchStartY = 0;
-let touchEndX = 0;
-let touchEndY = 0;
-
-canvas.addEventListener("touchstart", function (e) {
-    const touch = e.touches[0];
-    touchStartX = touch.clientX;
-    touchStartY = touch.clientY;
-}, false);
-
-canvas.addEventListener("touchmove", function (e) {
-    e.preventDefault(); // zapobiega przewijaniu strony podczas przeciągania
-    const touch = e.touches[0];
-    touchEndX = touch.clientX;
-    touchEndY = touch.clientY;
-}, false);
-
-canvas.addEventListener("touchend", function (e) {
-    const dx = touchEndX - touchStartX;
-    const dy = touchEndY - touchStartY;
-
-    if (Math.abs(dx) > Math.abs(dy)) {
-        // poziome przesunięcie
-        if (dx > 0 && direction !== 'LEFT') nextDirection = 'RIGHT';
-        else if (dx < 0 && direction !== 'RIGHT') nextDirection = 'LEFT';
-    } else {
-        // pionowe przesunięcie
-        if (dy > 0 && direction !== 'UP') nextDirection = 'DOWN';
-        else if (dy < 0 && direction !== 'DOWN') nextDirection = 'UP';
-    }
-
-    // resetujemy współrzędne po dotknięciu
-    touchStartX = 0;
-    touchStartY = 0;
-    touchEndX = 0;
-    touchEndY = 0;
-}, false);
