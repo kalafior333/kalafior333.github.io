@@ -1101,6 +1101,7 @@ function adjustCanvas() {
 
     let parentWidth = centerBar.clientWidth;
     console.log("Szerokość rodzica:", parentWidth);
+    let mw = parentWidth;
     let mh = window.innerHeight * 0.5; 
   
 
@@ -1179,6 +1180,7 @@ function game() {
            
         } else {
             snake.pop(); 
+        }
         for (let i = 0; i < snake.length; i++) {
             ctx.fillStyle = 'red';
             ctx.strokeStyle = 'black';
@@ -1187,6 +1189,7 @@ function game() {
         }
     }
 }
+
 
 function wynikView() {
     getMoney();
@@ -1219,4 +1222,4 @@ function resetProgress() {
     localStorage.clear();
     location.reload();
 }
-}
+
